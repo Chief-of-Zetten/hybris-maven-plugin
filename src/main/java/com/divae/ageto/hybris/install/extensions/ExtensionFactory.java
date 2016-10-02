@@ -35,6 +35,10 @@ public enum ExtensionFactory {
 
     private static final Map<String, Extension> EXTENSIONS = Maps.newHashMap();
 
+    /*Tries to find all hybris extensions in the given hybris directory
+      @param    hybrisInstallDirectory  directory of the hybris installation
+      @return   List of extensions found in the given directory
+    * */
     public static Set<Extension> getExtensions(final File hybrisInstallDirectory) {
         final List<String> extensionNames = Extensions.getExtensionNames(hybrisInstallDirectory);
         final Map<String, File> extensionPaths = getExtensionPaths(hybrisInstallDirectory);
@@ -49,6 +53,10 @@ public enum ExtensionFactory {
         return extensions;
     }
 
+    /*Tries to find all hybris extensions plus their transitive dependencies in the given hybris directory
+      @param    hybrisInstallDirectory  directory of the hybris installation
+      @return   List of extensions and their transitive dependencies found in the given directory
+    * */
     public static Set<Extension> getTransitiveExtensions(final Set<Extension> extensions) {
         final Set<Extension> transitiveExtensions = Sets.newHashSet();
 
@@ -139,6 +147,12 @@ public enum ExtensionFactory {
         return extension;
     }
 
+    /*Returns the binary of the specified extension
+      @param    extensionName   name of the extension for which the binary should be returned
+      @param    extensionPaths  a map containing the names of all known extensions and their base paths
+      @param    hybrisInstallDirectory  the folder of the hybris installation
+      @return   the binary of the extension
+    * */
     public static ExtensionBinary getBinary(final String extensionName, final Map<String, File> extensionPaths,
             final File hybrisIntallDirectory) {
         final File extensionFolder = extensionPaths.get(extensionName);

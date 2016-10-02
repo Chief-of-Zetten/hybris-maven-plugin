@@ -46,6 +46,10 @@ public class Extension {
         this.originalLocation = originalLocation;
     }
 
+    /*Returns location of the external-dependencies.xml file
+      @param    hybrisDirectory folder where the hybris installation can be found
+      @return   path of the external-dependencies.xml file
+    * */
     public File getExternalDependenciesXML(final File hybrisDirectory) {
         if (new File(hybrisDirectory, new File(baseDirectory, "external-dependencies.xml").toString()).exists()) {
             return new File(hybrisDirectory, new File(baseDirectory, "external-dependencies.xml").toString());

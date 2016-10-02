@@ -17,6 +17,8 @@ class CodeGeneratorMojo extends AbstractMojo {
     @Parameter(defaultValue = "${project}", readonly = true)
     private MavenProject project;
 
+    /*Runs the plugin
+    * @throws MojoFailureException*/
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         try {

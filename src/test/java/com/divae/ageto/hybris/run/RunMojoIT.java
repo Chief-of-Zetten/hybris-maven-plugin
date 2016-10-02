@@ -21,7 +21,7 @@ public class RunMojoIT extends RunMojo {
             LOGGER.info("Please input location of hybris reactor dir:");
 
             final RunMojo runMojo = new RunMojo();
-            runMojo.setWorkDirectory(new File("C:\\Users\\mhaagen\\AppData\\Local\\Temp\\1473063679874-0\\"));
+            runMojo.setWorkDirectory(new File("C:\\Users\\mhaagen\\AppData\\Local\\Temp\\1473234634626-0"));
             runMojo.execute();
         } catch (Exception e) {
             fail(e.getMessage());
