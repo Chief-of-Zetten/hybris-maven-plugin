@@ -26,6 +26,10 @@ public class CopyTestSourcesTask extends AbstractWorkDirectoryTask {
         taskContext.setParameter(SKIPTESTS, true);
     }
 
+    /*Returns whether the tests sources with the unit tests of the hybris suite will be copied and executed while
+      restructuring the hybris plugins or not
+      @param    taskContext the context of the current running task
+    * */
     public static boolean getTestSourcesEnabled(final TaskContext taskContext) {
         if (taskContext.getParameter(SKIPTESTS) != null) {
             return (boolean) taskContext.getParameter(SKIPTESTS);

@@ -23,6 +23,12 @@ public enum ExtensionMetadataFile {
 
     ;
 
+    /*Create a new metadata file for the given extension and stores the extensions info into
+      the created metadata file
+      @param    extension   extension which information should be stored into the metadata file
+      @param    wordDirectory   current work directory in which the metadata file will be created
+      @return   path to the created metadata file
+    * */
     public static File createMetadataFile(final Extension extension, final File workDirectory) {
         try {
             final File metadataFolder = MetadataFile.getFilePath(extension.getName());
@@ -44,6 +50,11 @@ public enum ExtensionMetadataFile {
         }
     }
 
+    /*Reads the content of the metadatafile for the given extension
+      @param    workDirectory   the current work directory in which the metadata file can be found
+      @param    extensionName   the name of the extension for which the metadata file should be read
+      @return   an abstract Extension object containing the extension info having been read from the metadata file
+    * */
     public static Extension readMetadataFile(final File workDirectory, final String extensionName) {
         String metadataFolder = MetadataFile.getFilePath(extensionName).toString();
         final File metadataFile = new File(new File(workDirectory, metadataFolder),

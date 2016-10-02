@@ -21,6 +21,8 @@ public class CreateWorkDirectoryTask implements InstallTask {
     }
 
     @Override
+    /*Creates a new work directory
+    * */
     public void execute(final TaskContext taskContext) {
         File workDirectory = AbstractWorkDirectoryTask.getWorkDirectory(taskContext);
         if (workDirectory != null) {
